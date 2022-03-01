@@ -1,0 +1,41 @@
+/* Container q segura todo o conteudo do profile */
+.sidebar .profile_content{
+    position: absolute;
+    color: #fff;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* nome do usuario q segura tudo*/
+.sidebar .profile_content .profile{
+    position: relative;
+    padding: 10px 10px;
+    height: 80px;
+}
+/* Detahles com o nome e icons */
+.profile .profile_details{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    background: #1d1b31;
+    border-radius: 5px;
+    padding: 5px 0px;
+}
+/* icones */
+.profile_details .profile__link{
+    text-decoration: none;
+    color: #fff;
+    font-size: 25px;
+}
+.profile__link:hover i{
+    background: #fff;
+    color: #1d1b31;
+    transition: all .9s ease;
+    border-radius: 50%;
+}
+.social__link{
+    height: 28px;
+}
