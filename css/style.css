@@ -22,9 +22,26 @@ body{
     top: 0;
     left: 0;
     height: 100%;
-    width: 315px;
+    width: 78px;
     background: #11101d;
     padding: 6px 14px;
     transition: all .5s ease;
 }
 
+.sidebar.active{
+    width: 315px;
+}
+
+
+#home{
+    position: absolute;
+    height: 100%;
+    width: calc(100% - 78px);
+    left: 78px;
+    transition: all .5s ease;
+}
+
+.sidebar.active ~ #home {
+    width: calc(100% - 315px);
+    left: 315px;
+}

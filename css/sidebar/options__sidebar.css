@@ -18,12 +18,12 @@
 /* o texto que destaca ao passar em cima */
 .sidebar .nav_list li .tooltip{
     position: absolute;
-    left: 122px;
+    left: 180px;
     top: 0;
     transform: translate(-50%,-50%);
     border-radius: 6px;
     height: 35px;
-    width: 122px;
+    width: 222px;
     line-height: 35px;
     text-align: center;
     background: #fff;
@@ -31,8 +31,18 @@
     transition: 0s;
     opacity: 0;
     pointer-events: none;
+    display: block;
+}
+
+.sidebar.active ul li .tooltip{
     display: none;
 }
+.sidebar ul li:hover .tooltip{
+    transition: all .5s ease;
+    top: 50%;
+    opacity: 1;
+}
+
 
 /* Links do li's */
 .sidebar .nav_list li .nav__option,.list__options{
@@ -57,10 +67,29 @@
 /* Icones li */
 .sidebar .nav_list li i{
     height: 50px;
-    min-width: 30px;
+    min-width: 50px;
     border-radius: 12px;
     line-height: 50px;
     text-align: center;
+    transition: all .5s ease;
+}
+
+.sidebar.active .nav_list li i{
+    min-width: 30px;
+}
+
+
+
+/* nome do li texto -- dashboard */
+.sidebar .links_name{
+    opacity: 0;
+    pointer-events: none;
+    transition: all .5s ease;
+}
+
+.sidebar.active .links_name{
+    opacity: 1;
+    pointer-events: auto;
 }
 
 
@@ -74,14 +103,6 @@
     height: 100%;
 }
 
-
-/* nome das opções do menu */
-.sidebar .links_name{
-    opacity: 1;
-    pointer-events: auto;
-    transition: all .5s ease;
-}
-
 /* opção do menu, q tem mais opções */
 .list__options{
     cursor: pointer;
@@ -89,20 +110,31 @@
 /* ul q segura tudo */
 .list__show{
     width: 90%;
-    height: max-content; 
+    height: 0px; 
     margin-left: auto;
     border-left: 2px solid #fff; /*barra vertical*/
     list-style: none;
-    transition: height .4s;
-    /* opacity: 0;
-    display: none; */
+    opacity: 0;
+    visibility: hidden;
+    transition: all .4s;
+}
 
+/* Aparacer opções */
+.list__show--active{
+    opacity: 100;
+    visibility: visible;
 }
 
 /* primeiro item da lista interna - Ano */
 #list__special .list__show > .list__inside:first-child{
+    margin: 0px 0px;
+}
+/* Aplicar uma margin ao aparecer os elementos */
+#list__special .list__show.list__show--active > .list__inside:first-child{
     margin: 10px 0px;
 }
+
+
 /* Todas as listas internas */
 #list__special .list__show > .list__inside{
     line-height: 35px;
@@ -118,7 +150,7 @@
 .list__inside:hover .nav__link {
     text-decoration: underline;
 }
-/* a texto */
+/* <a> texto */
 .nav__link--inside{
     border-radius: 6px;
     padding-left: 20px;    
@@ -129,4 +161,16 @@
 #list__special .list__options .links_name + .arrow{
     font-size: 30px;
     line-height: 54px;
+    margin-left: 30px;
+    transition: all .3s ease-in-out;
+    display: none;
+}
+.sidebar.active #list__special .list__options .links_name + .arrow{
+    display: block;
+}
+
+
+/* Mudar arrow */
+.arrow--active .arrow {
+    transform:  rotate(90deg);
 }

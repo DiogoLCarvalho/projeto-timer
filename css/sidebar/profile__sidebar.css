@@ -39,3 +39,9 @@
 .social__link{
     height: 28px;
 }
+.name_job{
+    display: none;
+}
+.sidebar.active .name_job{
+    display: block;
+}

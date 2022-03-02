@@ -7,8 +7,14 @@
     height: 50px;
     width: 100%;
     align-items: center;
+    opacity: 0;
     pointer-events: none;
-    transition: all .5s ease;
+    transition: all .2s ease-in-out;
+}
+
+.sidebar.active .logo_content .logo{
+    opacity: 1;
+    pointer-events: none;
 }
 
 /* icone do logo */
@@ -27,7 +33,7 @@
 .sidebar #btn{
     position: absolute;
     color: #fff;
-    left: 90%;
+    left: 50%;
     top: 6px;
     font-size: 20px;
     height: 50px;
@@ -37,4 +43,11 @@
     transform: translateX(-50%);
 }
 
+#btn{
+    cursor: pointer;
+}
+
+.sidebar.active #btn{
+    left: 90%;
+}
 /* VAI PRECISAR MUDAR OS VALORES AO COLOCAR A FUNÇÃO */
