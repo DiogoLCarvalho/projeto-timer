@@ -1,9 +1,10 @@
 // Menu de opções
-
 let listElements = document.querySelector('.list__options');
 let optionsOfList = document.querySelector('.list__show');
+let sidebar = document.querySelector('.sidebar');
 
-listElements.addEventListener('click', () => {
+
+function openOptions() {
     listElements.classList.toggle('arrow--active');
     optionsOfList.classList.toggle('list__show--active');
 
@@ -33,14 +34,31 @@ listElements.addEventListener('click', () => {
     // 4° Passo: Se ele estiver escondido, coloque o valor total dos elementos dentro da variavel
     // 5° Passo: Mude o height
     // Depois q eu clico e as opções aparecem q o height esta 230 então ele n cai no if. Mas ao eu clicar de novo ele reseta o height  let height = 0; mas ele só volta padrão depois do if
+}
+
+// Ao clicar na div
+listElements.addEventListener('click', () => {
+    
+    if (sidebar.getAttribute('class') === 'sidebar') {
+        sidebar.classList.toggle('active');   
+    }
+
+    if (sidebar.getAttribute('class') === 'sidebar active') {
+        openOptions();
+    }
 })
 
 
 
-// Abrir e fechar Sidebar
+
+// Abrir e fechar Sidebar - Burger
 let btn = document.querySelector('#btn');
-let sidebar = document.querySelector('.sidebar');
+
 
 btn.addEventListener('click', function () {
     sidebar.classList.toggle('active');
+
+    if (sidebar.getAttribute('class') === 'sidebar' && optionsOfList.getAttribute('class') != 'list__show') {
+        openOptions();
+    }
 })
