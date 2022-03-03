@@ -59,6 +59,21 @@
     background: #fff;
 }
 
+/* Destacar que esta na página */
+#current__page{
+    color: #11101d;
+    background: #fff;
+}
+
+#current__page--special{
+    background: #fff;
+    border-radius: 0px 20px 20px 0px;
+}
+#current__page--special a{
+    color: #11101d;
+}
+
+
 #list__special:hover .list__options{
     color: #11101d;
     background: #fff;
