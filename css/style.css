@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700;900&display=swap');
 @import url(sidebar/logo__sidebar.css);
+@import url(mainContent.css);
 
 
 *{
@@ -34,14 +35,23 @@ body{
 
 
 #home{
+    margin-top: 50px;
     position: absolute;
     height: 100%;
     width: calc(100% - 78px);
     left: 78px;
     transition: all .5s ease;
+     /* #c9e4ff  - #dfefff*/
 }
 
 .sidebar.active ~ #home {
     width: calc(100% - 315px);
     left: 315px;
+}
+
+.center-elements{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

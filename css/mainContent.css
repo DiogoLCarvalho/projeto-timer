@@ -1,0 +1,31 @@
+#title_content{
+    text-align: center;
+    font-size: 3.2em;
+    font-weight: bolder;
+}
+
+#section_content{
+    width: 80%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section_elements{
+    width: 50%;
+    height: 60%;
+    background: #11101d;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.bg_element{
+    background: white;
+    width: 12.50em;
+    height:18.75em;
+    text-align: center;
+}
+.bg_element h2{
+    font-size: 7em;
+}
