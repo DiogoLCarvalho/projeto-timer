@@ -8,6 +8,7 @@
     <!-- link do icons -->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages/cronometro.css">
     <title>Cronômetro Personalizado - Projeto Timer</title>
 </head>
 
@@ -79,14 +80,6 @@
                 <span class="tooltip">Relógio Digital</span>
             </li>
 
-            <li>
-                <a href="tenMinutes.html" class="nav__option">
-                    <i class='bx bx-timer'></i>
-                    <span class="links_name">Cronômetro de 10 minutos</span>
-                </a>
-                <span class="tooltip">Cronômetro de 10 minutos</span>
-            </li>
-
         </ul>
 
         <!-- Redes de contato -->
@@ -105,7 +98,8 @@
                             <i class='bx bxl-github'></i>
                         </a>
 
-                        <a href="https://www.linkedin.com/in/diogo-lima-carvalho/" class="profile__link" target="_blank">
+                        <a href="https://www.linkedin.com/in/diogo-lima-carvalho/" class="profile__link"
+                            target="_blank">
                             <i class='bx bxl-linkedin-square'></i>
                         </a>
                     </div>
@@ -120,6 +114,37 @@
 
     <main id="home">
         <h1 id="title_content">Cronômetro Personalizado</h1>
+
+        <section id="section_content-modified" class="center-elements">
+
+            <div class="section_elements">
+                <div class="bg_element">
+                    <h2>10</h2>
+                    <h3 class="color-special">Horas</h3>
+                </div>
+                <div class="bg_element">
+                    <h2>10</h2>
+                    <h3>Minutos</h3>
+                </div>
+                <div class="bg_element">
+                    <h2>00</h2>
+                    <h3>Segundos</h3>
+                </div>
+            </div>
+
+            <div class="section_elements">
+
+                <input type="number" name="definir tempo personalizado" id="set_timer"
+                    placeholder="Definir horas" min="0">
+                    
+                <input type="number" name="definir tempo personalizado" id="set_timer"
+                    placeholder="Definir minutos" min="0">
+
+                <div class="bg_icon" title="Definir um tempo personalizado">
+                    <i class='bx bxs-stopwatch'></i>
+                </div>
+            </div>
+        </section>
     </main>
 
 
