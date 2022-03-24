@@ -5,6 +5,18 @@
     cursor: pointer;
 }
 
+.bg_icon:nth-child(even) {
+    background: #276FBF;
+}
+
+.bg_icon:last-child  {
+    background: #F0A202
+}
+
+.bg_icon + .bg_icon {
+    margin-left: 20px;
+}
+
 .bg_icon i {
     font-size: 3em;
     color: white;

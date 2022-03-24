@@ -8,7 +8,7 @@
     <!-- link do icons -->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/pages/year.css">
+    <link rel="stylesheet" href="css/pages/elementos.css">
     <title>Quanto tempo para acabar o... - Projeto Timer</title>
 </head>
 
@@ -54,18 +54,18 @@
 
                 <ul class="list__show">
                     <li class="list__inside">
-                        <a href="acabarAno.html" class="nav__link nav__link--inside">Ano</a>
+                        <a href="acabar_ano.html" class="nav__link nav__link--inside">Ano</a>
                     </li>
 
-                    <li class="list__inside">
-                        <a href="acabarMes.html" class="nav__link nav__link--inside">Mês</a>
-                    </li>
-
-                    <li class="list__inside">
-                        <a href="acabarSemana.html" class="nav__link nav__link--inside">Semana</a>
-                    </li>
                     <li class="list__inside" id="current__page--special">
-                        <a href="#" class="nav__link nav__link--inside" >Dia</a>
+                        <a href="#" class="nav__link nav__link--inside">Mês</a>
+                    </li>
+
+                    <li class="list__inside">
+                        <a href="acabar_semana.html" class="nav__link nav__link--inside">Semana</a>
+                    </li>
+                    <li class="list__inside">
+                        <a href="acabar_dia.html" class="nav__link nav__link--inside">Dia</a>
                     </li>
                 </ul>
 
@@ -113,24 +113,28 @@
 
 
     <main id="home">
-        <h1 id="title_content">Quanto tempo para acabar o dia</h1>
+        <h1 id="title_content">Quanto tempo para acabar o mês</h1>
 
         <section id="section_content" class="center-elements">
 
             <div class="section_elements">
-
                 <div class="bg_element">
-                    <h2>10</h2>
-                    <h3>Horas</h3>
+                    <h2 id="day"></h2>
+                    <h3>Dias</h3>
                 </div>
 
                 <div class="bg_element">
-                    <h2>10</h2>
-                    <h3 class="color-special">Minutos</h3>
+                    <h2 id="hours"></h2>
+                    <h3 class="color-special">Horas</h3>
                 </div>
 
                 <div class="bg_element">
-                    <h2>00</h2>
+                    <h2 id="minutes"></h2>
+                    <h3>Minutos</h3>
+                </div>
+
+                <div class="bg_element">
+                    <h2 id="seconds"></h2>
                     <h3>Segundos</h3>
                 </div>
             </div>
