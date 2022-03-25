@@ -9,6 +9,8 @@
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href='css/pages/elementos.css'>
+    <!-- Link da biblioteca para funcionar a aplicação -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Quanto tempo para acabar o... - Projeto Timer</title>
 </head>
 
@@ -120,22 +122,22 @@
 
             <div class="section_elements">
                 <div class="bg_element">
-                    <h2>10</h2>
+                    <h2 id="day"></h2>
                     <h3>Dias</h3>
                 </div>
 
                 <div class="bg_element">
-                    <h2>10</h2>
+                    <h2 id="hours"></h2>
                     <h3 class="color-special">Horas</h3>
                 </div>
 
                 <div class="bg_element">
-                    <h2>10</h2>
+                    <h2 id="minutes"></h2>
                     <h3>Minutos</h3>
                 </div>
 
                 <div class="bg_element">
-                    <h2>00</h2>
+                    <h2 id="seconds"></h2>
                     <h3>Segundos</h3>
                 </div>
             </div>
@@ -144,6 +146,7 @@
 
 
     <script src="js/sidebar.js"></script>
+    <script src="js/acabar/acabarAno.js"></script>
 </body>
 
 </html>
