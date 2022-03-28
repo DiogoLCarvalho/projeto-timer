@@ -1,6 +1,3 @@
-let hours = document.querySelector('#hours');
-let minutes = document.querySelector('#minutes');
-let seconds = document.querySelector('#seconds');
 let day = document.querySelector('#day');
 
 

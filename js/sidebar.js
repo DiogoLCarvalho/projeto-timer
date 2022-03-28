@@ -3,6 +3,12 @@ let listElements = document.querySelector('.list__options');
 let optionsOfList = document.querySelector('.list__show');
 let sidebar = document.querySelector('.sidebar');
 
+// horas - minutos - segundos
+let hours = document.querySelector('#hours');
+let minutes = document.querySelector('#minutes');
+let seconds = document.querySelector('#seconds');
+
+
 
 function openOptions() {
     listElements.classList.toggle('arrow--active');
