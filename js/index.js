@@ -7,8 +7,6 @@ let intMinutos = document.querySelector('#input_Minutos');
 
 let verificaDefinicao = false;
 
-
-
 btnHora.addEventListener('click', () => {
     if (intHora.value === '') {
         hours.textContent = '00';
@@ -22,6 +20,7 @@ btnHora.addEventListener('click', () => {
         if (intMinutos.value > 60 || intMinutos.value < 0) {
             minutes.textContent = '60';
         } else {
+            intMinutos.value = intMinutos.value < 10 ? "0" + intMinutos.value : intMinutos.value;
             minutes.textContent = intMinutos.value;
         }
     }
@@ -30,6 +29,7 @@ btnHora.addEventListener('click', () => {
         if (intHora.value > 24 || intHora.value < 0) {
             hours.textContent = '24';
         } else {
+            intHora.value = intHora.value < 10 ? "0" + intHora.value : intHora.value;
             hours.textContent = intHora.value;
         }
     }
@@ -56,20 +56,24 @@ btnPlay.addEventListener('click', function () {
 function startTimer(duration) {
 
     var timer = duration, hora, minutos, segundos;
-    var auxM = parseInt(intMinutos.value);
+    // Pegar o valor de minutos quanto ele é maior que 60
+    var auxM = parseInt(minutes.textContent);
 
     var meuInterval = setInterval(function () {
 
+        // Desabilitar botões
+        btnHora.style.pointerEvents = "none";
+        btnHora.style.background = "#505053";
+        btnPlay.style.pointerEvents = "none";
+        btnPlay.style.background = "#505053";
+
+
+        // Converter segundos
         hora = parseInt(timer / 3600, 10);
         minutos = parseInt(timer / 60, 10);
         segundos = parseInt(timer % 60, 10);
 
-        // Excluir
-        if (segundos === 60) {
-            segundos = 00
-            minutos++
-        }
-
+        // Arrumar tempo em minutos
         if (minutos > 60) {
             minutos = auxM;
 
@@ -79,23 +83,31 @@ function startTimer(duration) {
                     auxM = 59;
                 }
             }
-            console.log(minutos);
-        } else {
-            minutos = minutos < 10 ? "0" + minutos : minutos;
-        }
-
-        // Excluir
-        if (hora === 24) {
-            hora = 00;
         }
 
 
+        // Colocar o 0 na frente
+        hora = hora < 10 ? "0" + hora : hora;
+        minutos = minutos < 10 ? "0" + minutos : minutos;
         segundos = segundos < 10 ? "0" + segundos : segundos;
 
-        console.log(hora + ":" + minutos + ' : ' + segundos);
+        // Colocar no display
+        hours.textContent = hora;
+        minutes.textContent = minutos;
+        seconds.textContent = segundos;
 
+        // Diminuir tempo
         if (--timer < 0) {
             clearInterval(meuInterval);
+
+            // Habilitar botões
+            btnHora.style.pointerEvents = "auto";
+            btnHora.style.background = "#EF2F3C";
+
+            btnPlay.style.pointerEvents = "auto";
+            btnPlay.style.background = "#276FBF";
+
+            verificaDefinicao = false;
         }
 
 
@@ -105,42 +117,17 @@ function startTimer(duration) {
             minutes.textContent = '00';
             seconds.textContent = '00';
 
+            // Habilitar botões
+            btnHora.style.pointerEvents = "auto";
+            btnHora.style.background = "#EF2F3C";
+
+
+            btnPlay.style.pointerEvents = "auto";
+            btnPlay.style.background = "#276FBF";
+
+
             clearInterval(meuInterval);
         });
 
     }, 1000);
 }
-
-
-
-// const countDown = () => {
-
-//     const meses = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-//     let mesCorreto = meses[new Date().getMonth()];
-
-
-//     const countDate = new Date(`${mesCorreto} ${new Date().getDate()}, ${new Date().getFullYear()} 00:00:00`).getTime();
-//     // const countDate = new Date(`${mesCorreto} 31, 2022 00:00:00`).getTime();
-//     const timenow = new Date().getTime();
-//     const gap = 3600000;
-
-
-//     const timeSecond = 1000;
-//     const timeMinute = timeSecond * 60;
-//     const timeHour = timeMinute * 60;
-//     const timeDay = timeHour * 24;
-
-
-
-//     const textDay = Math.floor(gap / timeDay);
-//     const textHour = Math.floor((gap % timeDay) / timeHour);
-//     const textminute = Math.floor((gap % timeHour) / timeMinute);
-//     const textSecond = Math.floor((gap % timeMinute) / timeSecond);
-
-//     console.log(textDay);
-//     hours.textContent = textHour;
-//     minutes.textContent = textminute;
-//     seconds.textContent = textSecond;
-// }
-
-// // setInterval(countDown, 1000);    

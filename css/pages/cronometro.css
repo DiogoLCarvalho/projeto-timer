@@ -3,6 +3,7 @@
     padding: 15px;
     border-radius: 30%;
     cursor: pointer;
+    transition: all .5s ease-in-out;
 }
 
 .bg_icon:nth-child(even) {
@@ -51,17 +52,26 @@
 
 .bg_element:first-child {
     background-color: #EF2F3C;
+    box-shadow: 2px 2px 5px #EF2F3C;
+
 }
 
 .bg_element:nth-child(2) {
     background-color: #F6F4F3;
+    box-shadow: 2px 2px 5px #F6F4F3;
+
 }
 
 
 .bg_element:last-child {
     background-color: #F0A202;
+    box-shadow: 2px 2px 5px #F0A202;
 }
 
+/* Só nesta página */
+.section_elements{
+    flex-wrap: wrap;
+}
 
 /* Animações definir tempo */
 @keyframes wobble-hor-bottom {
@@ -97,5 +107,62 @@
     75% {
         -webkit-transform: translateX(-6px) rotate(-1.2deg);
         transform: translateX(-6px) rotate(-1.2deg);
+    }
+}
+
+@media (max-width:1500px){
+    .set_timer{
+        width: 20%;
+    }
+}
+@media (max-width:1000px){
+    .set_timer{
+        width: 40%;
+    }
+    .bg_icon{
+        padding: 10px;
+    }
+    .bg_icon i{
+        font-size: 2.5rem;
+    }
+}
+@media (max-width:750px){
+    #section_content-modified{
+        height: 65vh;
+    }
+    .set_timer{
+        width: 90%;
+        margin: 0;
+    }
+    .bg_icon{
+        padding: 10px;
+    }
+    .bg_icon i{
+        font-size: 2.5rem;
+    }
+    .bg_element h2 {
+        font-size: 3em;
+        line-height: 100px;
+    }
+    .bg_element h3 {
+        font-size: 1.2em;
+        font-weight: 200;
+    }
+    #title_content{
+        font-size: 2em;
+    }
+    .section_elements-cards{
+        height: 100%;
+        flex-direction: column;
+        margin-bottom: 50px;
+    }
+    .section_elements-cards > .bg_element{
+        margin-left: 0px;
+        margin-bottom: 10px;
+        width: 10em;
+    }
+    #input_Minutos{
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 }
